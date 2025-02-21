@@ -117,142 +117,79 @@ header {
   
 /* Home Section Styles */
 .home-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 0 2rem;
-    background-color: #1a1a1a;
-  }
-  
-  .home-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    width: 100%;
-  }
-  
-  .intro-text {
-    max-width: 600px;
-  }
-  
-  .intro-text h1 {
-    font-size: 3.5rem; /* Increased font size */
-    margin-bottom: 1rem;
-  }
-  
-  .intro-text h2 {
-    font-size: 2.5rem; /* Increased font size */
-    margin-bottom: 1rem;
-    color: #f39c12;
-  }
-  
-  .intro-text p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .hire-me-btn {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    background-color: #f39c12;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-  }
-  
-  .hire-me-btn:hover {
-    background-color: #e67e22;
-  }
-  
-  .profile-photo img {
-    width: 400px; /* Increased size */
-    height: 400px; /* Increased size */
-    border-radius: 50%;
-    border: 8px solid #f39c12; /* Thicker border */
-    object-fit: cover; /* Ensures the image fits well */
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      background-color: #333;
-      width: 100%;
-      text-align: center;
-    }
-  
-    .nav-links.active {
-      display: flex;
-    }
-  
-    .hamburger {
-      display: block;
-    }
-  
-    .home-content {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .profile-photo img {
-      width: 200px;
-      height: 200px;
-      margin-top: 2rem;
-    }
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 2rem;
+  background-color: var(--home-bg, #1a1a1a); /* Default dark theme */
+}
 
- /* About Section Styles */
-.about-section {
-    padding: 5rem 2rem;
-    background-color: #2c2c2c;
-    text-align: center;
-  }
-  
-  .about-content {
-    max-width: 800px; /* Limit width for better readability */
-    margin: 0 auto;
-    padding: 0 1rem; /* Add padding for smaller screens */
-  }
-  
-  .about-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #f39c12;
-  }
-  
-  .about-content p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-  }
-  
-  /* Responsive Styles for Mobile */
-  @media (max-width: 768px) {
-    .about-section {
-      padding: 3rem 1rem; /* Reduce padding for smaller screens */
-    }
-  
-    .about-content h2 {
-      font-size: 2rem; /* Smaller heading for mobile */
-    }
-  
-    .about-content p {
-      font-size: 1rem; /* Smaller text for mobile */
-    }
-  }
+.home-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+}
 
-/* Skills Section Styles */
+.intro-text {
+  max-width: 600px;
+}
+
+.intro-text h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--home-heading, #ffffff); /* Default dark theme */
+}
+
+.intro-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--home-subheading, #f39c12); /* Default dark theme */
+}
+
+.intro-text p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--home-text, #ffffff); /* Default dark theme */
+}
+
+.hire-me-btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: #f39c12;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.hire-me-btn:hover {
+  background-color: #e67e22;
+}
+
+.profile-photo img {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 8px solid #f39c12;
+  object-fit: cover;
+}
+
+/* Light Theme Overrides for Home Section */
+body.light-mode .home-section {
+  --home-bg: #ffffff; /* Light background */
+  --home-heading: #1a1a1a; /* Dark text for heading */
+  --home-subheading: #f39c12; /* Keep subheading color consistent */
+  --home-text: #1a1a1a; /* Dark text for paragraphs */
+}
+
+//* Skills Section Styles */
 .skills-section {
-    padding: 2rem;
-    background-color: #1a1a1a;
+    padding: 5rem 2rem;
+    background-color: var(--skills-bg, #1a1a1a); /* Default dark theme */
     text-align: center;
   }
   
@@ -264,32 +201,40 @@ header {
   .skills-content h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #f39c12;
+    color: #f39c12; /* Keep skills heading color consistent */
   }
   
   .skills-grid {
-    display: flex;
-    justify-content: center;
-    gap: 1rem; /* Space between boxes */
-    flex-wrap: wrap; /* Wrap to next line if too many skills */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
   }
   
   .skill-item {
-    background-color: #333;
-    padding: 1rem 1.5rem;
+    background-color: var(--skills-item-bg, #333); /* Default dark theme */
+    padding: 1.5rem;
     border-radius: 8px;
-    font-size: 1rem;
-    color: #ffffff;
-    text-align: center;
-    min-width: 100px; /* Small box width */
+    font-size: 1.1rem;
+    color: var(--skills-text, #ffffff); /* Default dark theme */
     transition: transform 0.3s, background-color 0.3s;
   }
   
   .skill-item:hover {
     transform: translateY(-5px);
-    background-color: #f39c12;
-    color: #1a1a1a;
+    background-color: var(--skills-item-hover, #f39c12); /* Default dark theme */
+    color: var(--skills-text-hover, #1a1a1a); /* Default dark theme */
   }
+  
+  /* Light Theme Overrides for Skills Section */
+  body.light-mode .skills-section {
+    --skills-bg: #f8f9fa; /* Light background */
+    --skills-item-bg: #ffffff; /* White background for skill items */
+    --skills-text: #1a1a1a; /* Dark text for skill items */
+    --skills-item-hover: #e67e22; /* Hover background color */
+    --skills-text-hover: #ffffff; /* Hover text color */
+  }
+
 
 /* Projects Section Styles */
 .projects-section {
