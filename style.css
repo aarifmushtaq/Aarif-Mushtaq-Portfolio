@@ -186,7 +186,39 @@ body.light-mode .home-section {
   --home-text: #1a1a1a; /* Dark text for paragraphs */
 }
 
-//* Skills Section Styles */
+/* About Section Styles */
+.about-section {
+    padding: 5rem 2rem;
+    background-color: var(--about-bg, #2c2c2c); /* Default dark theme */
+    text-align: center;
+  }
+  
+  .about-content {
+    max-width: 800px; /* Limit width for better readability */
+    margin: 0 auto;
+    padding: 0 1rem; /* Add padding for smaller screens */
+  }
+  
+  .about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--about-heading, #f39c12); /* Default dark theme */
+  }
+  
+  .about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--about-text, #ffffff); /* Default dark theme */
+  }
+  
+  /* Light Theme Overrides for About Section */
+  body.light-mode .about-section {
+    --about-bg: #f8f9fa; /* Light background */
+    --about-heading: #f39c12; /* Dark text for heading */
+    --about-text: #1a1a1a; /* Dark text for paragraphs */
+  }
+/* Skills Section Styles */
 .skills-section {
     padding: 5rem 2rem;
     background-color: var(--skills-bg, #1a1a1a); /* Default dark theme */
@@ -232,7 +264,7 @@ body.light-mode .home-section {
     --skills-item-bg: #ffffff; /* White background for skill items */
     --skills-text: #1a1a1a; /* Dark text for skill items */
     --skills-item-hover: #e67e22; /* Hover background color */
-    --skills-text-hover: #ffffff; /* Hover text color */
+    --skills-text-hover: #e67e22; /* Hover text color */
   }
 
 
