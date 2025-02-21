@@ -95,6 +95,7 @@ header {
       top: 60px;
       right: 0;
       background-color: #333;
+      color:#ffffff;
       width: 200px; /* Small width for the dropdown */
       text-align: left;
       padding: 1rem;
@@ -212,12 +213,21 @@ body.light-mode .home-section {
     color: var(--about-text, #ffffff); /* Default dark theme */
   }
   
-  /* Light Theme Overrides for About Section */
-  body.light-mode .about-section {
-    --about-bg: #f8f9fa; /* Light background */
-    --about-heading: #f39c12; /* Dark text for heading */
-    --about-text: #1a1a1a; /* Dark text for paragraphs */
+  /* Responsive Styles for Mobile */
+  @media (max-width: 768px) {
+    .about-section {
+      padding: 3rem 1rem; /* Reduce padding for smaller screens */
+    }
+  
+    .about-content h2 {
+      font-size: 2rem; /* Smaller heading for mobile */
+    }
+  
+    .about-content p {
+      font-size: 1rem; /* Smaller text for mobile */
+    }
   }
+  
 /* Skills Section Styles */
 .skills-section {
     padding: 5rem 2rem;
