@@ -227,15 +227,15 @@ body.light-mode .home-section {
       font-size: 1rem; /* Smaller text for mobile */
     }
   }
-  
 /* Skills Section Styles */
 .skills-section {
     padding: 5rem 2rem;
-    background-color: var(--skills-bg, #1a1a1a); /* Default dark theme */
+    background-color: var(--skills-bg, #1a1a1a);
     text-align: center;
   }
   
   .skills-content {
+    
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -243,41 +243,87 @@ body.light-mode .home-section {
   .skills-content h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #f39c12; /* Keep skills heading color consistent */
+    color: var(--skills-heading, #f39c12);
   }
   
   .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 2 skills per row on desktop */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* gap: 2rem; */
     padding: 1rem;
   }
   
   .skill-item {
-    background-color: var(--skills-item-bg, #333); /* Default dark theme */
+    width: 40%;
+    background-color: var(--skills-item-bg, #333);
     padding: 1.5rem;
     border-radius: 8px;
-    font-size: 1.1rem;
-    color: var(--skills-text, #ffffff); /* Default dark theme */
-    transition: transform 0.3s, background-color 0.3s;
+    text-align: left;
+    margin: 10px;
   }
   
-  .skill-item:hover {
-    transform: translateY(-5px);
-    background-color: var(--skills-item-hover, #f39c12); /* Default dark theme */
-    color: var(--skills-text-hover, #1a1a1a); /* Default dark theme */
+  .skill-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--skills-text, #ffffff);
   }
   
-  /* Light Theme Overrides for Skills Section */
+  .percentage {
+    font-size: 0.9rem;
+    color: var(--skills-text, #ffffff);
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: var(--progress-bg, #555);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: var(--progress-fill, #f39c12);
+    border-radius: 5px;
+  }
+  
+  /* Light Theme Overrides */
   body.light-mode .skills-section {
-    --skills-bg: #f8f9fa; /* Light background */
-    --skills-item-bg: #ffffff; /* White background for skill items */
-    --skills-text: #1a1a1a; /* Dark text for skill items */
-    --skills-item-hover: #e67e22; /* Hover background color */
-    --skills-text-hover: #e67e22; /* Hover text color */
+    --skills-bg: #f8f9fa;
+    --skills-heading: #1a1a1a;
+    --skills-item-bg: #ffffff;
+    --skills-text: #1a1a1a;
+    --progress-bg: #e9ecef;
+    --progress-fill: #e67e22;
   }
-
-
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .skills-grid {
+      grid-template-columns: 1fr; /* Single column on mobile */
+      gap: 1.5rem;
+      padding: 0;
+    }
+  
+    .skill-item {
+      padding: 1rem;
+    }
+  
+    .skill-name {
+      font-size: 1rem;
+    }
+  
+    .percentage {
+      font-size: 0.8rem;
+    }
+  }
+  
 /* Projects Section Styles */
 .projects-section {
     padding: 5rem 2rem;
